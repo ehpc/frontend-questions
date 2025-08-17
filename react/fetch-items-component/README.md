@@ -2,7 +2,7 @@
 
 Given the API endpoint `GET /api/items`:
 
-```json
+```js
 {
   result: {
     code: 200,
