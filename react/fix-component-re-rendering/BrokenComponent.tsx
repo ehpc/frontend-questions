@@ -7,7 +7,7 @@ interface INameProps {
 
 const Name: FC<INameProps> = ({ item, onClick }) => {
   const { isDisabled, name } = item;
-  console.log(`rendered ${name}`);
+  console.log(`broken rendered ${name}`);
 
   return (
     <button
