@@ -223,3 +223,19 @@ footer {
 }
 ```
 
+# Repaints vs Reflows
+
+Reflow (layout) = the browser recalculates positions & sizes of elements.
+
+Expensive, can cascade to children/parents.
+
+Triggered by things like: changing width, height, font-size, display, adding/removing DOM nodes.
+
+Repaint = browser redraws pixels but doesn’t recalc layout.
+
+Cheaper than reflow.
+
+Triggered by style changes like color, background, visibility.
+
+👉 Reflow = geometry recalculation, repaint = visual update only.
+
