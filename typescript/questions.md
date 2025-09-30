@@ -520,3 +520,25 @@ type ArrOfStrOrNum = ToArrayNonDist<string | number>;
           
 // type ArrOfStrOrNum = (string | number)[]
 ```
+
+# How do you type a function that returns a Promise of array of users?
+
+```ts
+type FetchUsers: (): Promise<User[]>
+```
+
+# Why does this fail? How to fix?
+```ts
+const arr = [];
+arr.push(1);
+arr.push("hi"); // error?
+```
+
+By default, TS infers it as never[] (an array that can hold nothing), 
+because there’s no evidence of what should go inside.
+
+```ts
+const arr: (number | string)[] = [];
+arr.push(1);
+arr.push("hi"); // ✅
+```
