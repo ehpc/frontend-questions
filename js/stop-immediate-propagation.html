@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>stopImmediatePropagation Example</title>
+</head>
+<body>
+  <button id="myBtn">Click Me</button>
+  <script>
+    const btn = document.getElementById('myBtn');
+
+    btn.addEventListener('click', function() {
+      console.log('First handler');
+    });
+
+    btn.addEventListener('click', function(e) {
+      console.log('Second handler (stops)');
+      e.stopImmediatePropagation();
+    });
+
+    btn.addEventListener('click', function() {
+      console.log('Third handler');
+    });
+  </script>
+</body>
+</html>

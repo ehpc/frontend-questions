@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Delegation: Bubbling & Capturing</title>
+  <style>
+    #parent { padding: 20px; background: #eee; }
+    .child { margin: 10px; padding: 10px; background: #cfc; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+  </div>
+  <script>
+    // Bubbling phase (default: useCapture = false)
+    document.getElementById('parent').addEventListener('click', function(e) {
+      if (e.target.matches('.child')) {
+        console.log('Bubbling: Clicked ' + e.target.textContent);
+      }
+    });
+
+    // Capturing phase (useCapture = true)
+    document.getElementById('parent').addEventListener('click', function(e) {
+      if (e.target.matches('.child')) {
+        console.log('Capturing: Clicked ' + e.target.textContent);
+      }
+    }, true);
+  </script>
+</body>
+</html>
