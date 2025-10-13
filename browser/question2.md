@@ -117,7 +117,7 @@ calculated in the layout phase to actual pixels on the screen.
 The drawing to the screen is generally broken down into several layers.
 Promoting content into layers on the GPU improves paint and repaint performance.
 There are specific properties and elements that instantiate a layer, 
-including <video> and <canvas>, and any element which has the CSS properties 
+including `<video>` and `<canvas>`, and any element which has the CSS properties 
 of opacity, a 3D transform, will-change, and a few others. These nodes will 
 be painted onto their own layer, along with their descendants.
 
